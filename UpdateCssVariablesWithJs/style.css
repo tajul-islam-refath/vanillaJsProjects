@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: #ffc600;
+    --padding: 10px;
+    --blur: 10px;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+    background-color: var(--color);
+    padding: var(--padding);
+    -webkit-filter: blur(var(--blur));
+    filter: blur(var(--blur));
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col-md-4 {
+    width: 33.33%;
+}
+
+.img {
+    text-align: center;
+}

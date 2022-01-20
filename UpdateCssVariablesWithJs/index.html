@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Css Variables With JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <h2>Update Css Variables With <span class="js">JS</span></h2>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="padding">Padding</label>
+                    <input type="range" min="0" max="100" value="10" name="padding" id="padding" data-sizing="px">
+                </div>
+                <div class="col-md-4">
+                    <label for="blur">Blur</label>
+                    <input type="range" min="0" max="100" value="10" name="blur" id="blur" data-sizing="px">
+                </div>
+                <div class="col-md-4">
+                    <label for="color">BackGround Color</label>
+                    <input type="color" value="#ffc600" name="color" id="color">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="img">
+                <img src="./rifat.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let inputs = document.querySelectorAll("input")
+        inputs.forEach(input => {
+            input.addEventListener("change", function() {
+                let px = this.dataset.sizing || " ";
+                document.documentElement.style.setProperty(`--${this.name}`, this.value + px)
+            })
+        })
+    </script>
+</body>
+
+</html>
